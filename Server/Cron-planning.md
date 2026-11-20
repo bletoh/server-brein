@@ -15,6 +15,7 @@ Alle tijden Europe/Amsterdam (`CRON_TZ`). Root-jobs in `/etc/cron.d/`. De Minecr
 | 01:30 | `reismannetje-backup.sh` | [[reismannetje-backup.sh]] |
 | 04:40 | `bedrock-ertsscan.sh` (user) | [[Mijnhoogte en ertsscan]] |
 | 18:00 | `dagelijkse-opruiming.sh` | [[dagelijkse-opruiming.sh]] |
+| 07:30 | onderhoudsagent (`agent-snapshot.py` + `claude-agent.sh onderhoud`) | [[Agents]] |
 | 07:00 | `n8n-daily-stats.sh` → n8n-webhook → ntfy-push | [[n8n-daily-stats.sh]] |
 
 ## Steeds
@@ -37,6 +38,7 @@ Alle tijden Europe/Amsterdam (`CRON_TZ`). Root-jobs in `/etc/cron.d/`. De Minecr
 ## Wekelijks
 | Tijd | Job | Notitie |
 |---|---|---|
+| zo 10:00 | Reismannetje-agent (`claude-agent.sh reismannetje`) | [[Agents]] |
 | ma 03:00 | `weekly-update.sh` (dnf, images, k3s-images, Flux-update, registry opruimen, evt. reboot) | [[weekly-update.sh]], [[k3s-onderhoud]] |
 | ma 04:00–05:00 | k3s-patches (system-upgrade-controller) | [[k3s-onderhoud]] |
 | ma 04:00 | `ensure-apps-up.sh` | [[ensure-apps-up.sh]] |

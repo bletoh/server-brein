@@ -34,4 +34,4 @@ tags: [werkwijze, tijdlijn]
 | 13-11 | Camera-opnames afspeelbaar via [[camera-afspeelbaar.sh]]; Reismannetje [[Gebruiksanalyse]], evenementen weg |
 | 14–17-11 | Reismannetje: Uit het raam, samen boeken, [[Kladblok]] |
 | 19-11 | [[Minecraft uit (november 2026)]]: alles rond Minecraft tijdelijk uit |
-| 20-11 | Vault in git; [[Grafana]] (Prometheus, node-exporter, cAdvisor) vervangt de loadmon-pagina op [[load.benjaminhashi.nl]]; firewallregel 015; databasemonitoring met Percona pg_stat_monitor (dashboard Databases); n8n-database gevacuumd (dode rijen opgeruimd) |
+| 20-11 | Vault in git; [[Grafana]] (Prometheus, node-exporter, cAdvisor) vervangt de loadmon-pagina op [[load.benjaminhashi.nl]]; firewallregel 015; databasemonitoring met Percona pg_stat_monitor (dashboard Databases); n8n-database gevacuumd (dode rijen opgeruimd); [[Agents]]: Grafana-alerts naar ntfy, dagelijkse onderhoudsagent en wekelijkse Reismannetje-agent |

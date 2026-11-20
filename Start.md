@@ -35,5 +35,6 @@ Alles over de OVH-server **vps-f1805963** (`57.129.67.6`) en wat erop draait. El
 | Kaart + stats | uNmINeD-kaart + live stats op mc.benjaminhashi.nl | [[Bedrock-kaart]] |
 | Automatisering | n8n-flows, cron-scripts, k3s-CronJobs, NAS-check | [[n8n]] |
 | Meldingen | ntfy + eigen Discord-kanaal, k8s-wachter, NAS van buitenaf | [[Monitoring en meldingen]] |
-| Monitoring | Grafana + Prometheus op load.benjaminhashi.nl | [[Grafana]] |
+| Monitoring | Grafana + Prometheus op load.benjaminhashi.nl, alerts naar ntfy | [[Grafana]] |
+| Agents | dagelijkse onderhoudsagent + wekelijkse Reismannetje-agent, rapporten in `Agents/` | [[Agents]] |
 | Backups | elke nacht lokaal + naar de Synology NAS | [[Backup-strategie]] |

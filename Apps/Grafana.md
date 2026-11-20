@@ -36,6 +36,9 @@ Dashboard **Databases** (`maak-db-dashboard.py dashboards`), in de lichte Percon
   ```
 - Bij een herstart van Postgres krijgt n8n een paar seconden "terminating connection" en herstelt zichzelf.
 
+## Alerts (sinds 2026-11-20)
+`maak-alerts.py provisioning/alerting` genereert 10 regels + contactpunt `ntfy` (webhook naar het bh-server-topic met ntfy-templating `?tpl=yes&t={{.title}}&m={{.message}}`). Groepering per alertnaam, herhaling na 12 uur, ook een melding bij herstel. De voorspelling "schijf binnen 14 dagen vol" telt pas mee met 2+ dagen meetdata. Grafana 13 heeft de oude test-API voor receivers niet meer (410); testen door rechtstreeks naar de ntfy-URL te posten. Zie [[Agents]].
+
 ## Valkuilen
 - **Proxy-doel:** NetBird-service `dbei4o9mn2ec738gc0g0` → `grafana:8080` (cluster, direct upstream). Tot de nieuwe API-token (20-11) liep dit via de alias `loadmon`; die is weg.
 - **cAdvisor scant schijfgebruik** van alle containers: dat kostte 3-4 cores. Daarom `disk,diskIO` uit en `cpus: 0.5`.

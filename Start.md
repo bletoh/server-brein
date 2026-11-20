@@ -17,7 +17,7 @@ Alles over de OVH-server **vps-f1805963** (`57.129.67.6`) en wat erop draait. El
 - **Kubernetes** — [[Kubernetes (k3s)]] · [[Flux en GitOps]] · [[Lokale registry]] · [[Reismannetje op k3s]] · [[Minecraft op k3s]] · [[Monitoring en meldingen]] · [[k3s-beveiliging]] · [[k3s-onderhoud]]
 - **Netwerk en beveiliging** — [[Traefik]] · [[CrowdSec]] · [[NetBird]] · [[NetBird reverse proxy]] · [[NetBird ACL en groepen]] · [[Apparaten]] · [[Geo-blokkade]] · [[Certificaten (Let's Encrypt)]] · [[Geheimen]]
 - **Domeinen** — [[Domeinen]]
-- **Apps** — [[Reismannetje]] · [[n8n]] · [[Calibre-web]] · [[Shelfmark]] · [[nb-monit]] · [[Bedrock-server]] · [[Bedrock-kaart]] · [[Vriendenpaneel]] · [[Bedrock Server Manager]]
+- **Apps** — [[Reismannetje]] · [[n8n]] · [[Calibre-web]] · [[Shelfmark]] · [[nb-monit]] · [[Bedrock-server]] · [[Bedrock-kaart]] · [[Vriendenpaneel]] · [[Bedrock Server Manager]] · [[Grafana]]
 - **Reismannetje (code)** — [[Reismannetje]] (hub met alle code- en functienotities)
 - **Minecraft** — [[Bedrock-server]] (hub met addons, events, kaart, economie)
 - **Automatisering** — [[Monitoring en meldingen]] · [[Cron-planning]] · [[weekly-update.sh]] · [[ensure-apps-up.sh]] · [[n8n-flows]] · [[NAS app-check]] · [[Scripts in ~-bin]]
@@ -35,4 +35,5 @@ Alles over de OVH-server **vps-f1805963** (`57.129.67.6`) en wat erop draait. El
 | Kaart + stats | uNmINeD-kaart + live stats op mc.benjaminhashi.nl | [[Bedrock-kaart]] |
 | Automatisering | n8n-flows, cron-scripts, k3s-CronJobs, NAS-check | [[n8n]] |
 | Meldingen | ntfy + eigen Discord-kanaal, k8s-wachter, NAS van buitenaf | [[Monitoring en meldingen]] |
+| Monitoring | Grafana + Prometheus op load.benjaminhashi.nl | [[Grafana]] |
 | Backups | elke nacht lokaal + naar de Synology NAS | [[Backup-strategie]] |

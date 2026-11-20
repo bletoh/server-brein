@@ -20,6 +20,7 @@ Geen firewalld: klassieke **iptables** met regels in `/etc/sysconfig/iptables` (
 | 011 | `192.168.178.0/24` | thuis-LAN (via NAS-route) |
 | 012 | `172.17.0.0/16` via docker0 | containers op docker0 → host |
 | 013 | `172.16.0.0/12` → tcp 11325 | [[Traefik]]/[[NetBird reverse proxy]] → [[Bedrock Server Manager]]-webui |
+| 015 | `172.16.0.0/12` → `172.17.0.1` tcp 9100 | Prometheus → node-exporter ([[Grafana]], sinds 2026-11-20) |
 | 200 | tcp 80, 443 | [[Traefik]] |
 | 201 | udp 51820 | NetBird WireGuard |
 | 203 | udp 19132 | [[Bedrock-server]] |

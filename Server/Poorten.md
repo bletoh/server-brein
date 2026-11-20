@@ -11,6 +11,7 @@ tags: [server, netwerk]
 | 80, 443 | tcp | docker-proxy → [[Traefik]] | ja | alle websites ([[Domeinen]]) |
 | 19132 (v6 19133) | udp | bedrock_server | ja | [[Bedrock-server]] (`minecraft.benjaminhashi.nl`) |
 | 51820 | udp | NetBird-client | ja | WireGuard van deze peer, [[NetBird]] |
+| 9100 | tcp | node-exporter op `172.17.0.1` | nee | hostmetrics voor [[Grafana]] (firewallregel 015) |
 | 51821 | udp | netbird-proxy | ja | WireGuard van de [[NetBird reverse proxy]] |
 | 3478 | udp | netbird-server | ja | STUN, [[NetBird]] |
 | 11325 | tcp | BSM (python) | alleen docker/VPN | [[Bedrock Server Manager]] webui (`bsm.benjaminhashi.nl`) |

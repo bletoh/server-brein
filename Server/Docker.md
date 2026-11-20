@@ -20,7 +20,11 @@ Alle web-apps draaien als Docker Compose-project onder `/srv/docker/<app>` (zie 
 | n8n-postgres-1 | postgres:16 | n8n | books-net | [[n8n]] |
 | calibre-web | linuxserver/calibre-web | ebooks | books-net | [[Calibre-web]] |
 | nb-monit | eigen build (node:24-alpine) | nb-monit | web | [[nb-monit]] |
-| loadmon | python:3.12-alpine | loadmon | books-net | [[Geheugen]] |
+| loadmon | python:3.12-alpine | loadmon | geen (meter) | [[Grafana]] |
+| grafana | grafana/grafana | grafana | books-net (alias loadmon), monitoring | [[Grafana]] |
+| prometheus | prom/prometheus | grafana | monitoring | [[Grafana]] |
+| node-exporter | prom/node-exporter | grafana | host | [[Grafana]] |
+| cadvisor | ghcr.io/google/cadvisor | grafana | monitoring | [[Grafana]] |
 | *(shelfmark)* | calibrain/shelfmark | downloader | — | [[Shelfmark]] (staat uit) |
 
 Naar k3s verhuisd: reismannetje → [[Reismannetje op k3s]]; bedrock-map, bedrock-map-api, vriendenpaneel, mcxboxbroadcast → [[Minecraft op k3s]].

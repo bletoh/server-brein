@@ -11,7 +11,7 @@ Maandag 03:00 (nacht van zondag op maandag), `/etc/cron.d/weekly-update`, log `/
 
 1. [[Bedrock-server]] netjes stoppen (`systemctl stop bedrock-server-manager-webui`, zo nodig `stop` op stdin).
 2. `dnf -y upgrade --refresh`.
-3. Per app in `APPS` (traefik crowdsec calibre-web n8n nb-monit netbird reismannetje bedrock-map vriendenpaneel loadmon): `compose pull`, `build --pull`, `up -d --remove-orphans`; daarna `docker image prune`.
+3. Per app in `APPS` (nu: traefik crowdsec calibre-web n8n nb-monit netbird loadmon grafana): `compose pull`, `build --pull`, `up -d --remove-orphans`; daarna `docker image prune`.
 4. Herstart als `dnf needs-restarting -r` dat zegt; anders direct [[ensure-apps-up.sh]].
 
 Shelfmark staat er bewust niet in. Minecraft zelf wordt niet automatisch bijgewerkt. Nieuwe app → toevoegen aan `APPS` hier én in [[ensure-apps-up.sh]].

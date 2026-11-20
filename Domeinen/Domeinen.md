@@ -20,6 +20,7 @@ DNS bij **OVH**. A-records → `57.129.67.6`; `*.benjaminhashi.nl` wildcard en `
 | [[books-download.benjaminhashi.nl]] | Traefik direct | [[Shelfmark]] | (uit) |
 | [[netbird.benjaminhashi.nl]] | Traefik direct | [[NetBird]] | publiek (login) |
 | [[monitor.benjaminhashi.nl]] | proxy | [[nb-monit]] | SSO |
+| [[load.benjaminhashi.nl]] | proxy | [[Grafana]] | SSO |
 | [[bsm.benjaminhashi.nl]] | proxy | [[Bedrock Server Manager]] | SSO + geo |
 | [[nas.benjaminhashi.nl]] | proxy | [[backupnas (Synology)]] | SSO + geo |
 | [[proxy.benjaminhashi.nl]] | proxy | [[NetBird reverse proxy]] | — |

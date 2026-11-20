@@ -15,6 +15,7 @@ Sinds 2026-10-31 komen alle servermeldingen ook in een **eigen Discord-kanaal** 
 | **NAS van buitenaf** | dead man's switch: de NAS controleert 12 apps elke 15 min en meldt zelf in Discord en ntfy, ook als de hele server plat ligt | [[NAS app-check]] |
 | uurlijkse check | [[ensure-apps-up.sh]] herstart wat niet draait en kijkt ook naar k3s, de pods en Flux | host |
 | loadmon | geheugen per app, nu ook voor k8s-pods (`loadmon-containers.sh` via crictl) | [[Geheugen]] |
+| [[Grafana]] | dashboards op load.benjaminhashi.nl: Prometheus (host + containers, 90 d) + loadmon-geschiedenis | Docker |
 
 ## Geheimen
 - Webhook van het serverkanaal: Secret `monitoring/ntfy-discord`, `/srv/k8s/server-discord-webhook` en `~/scripts/.discord-webhook` op de NAS.

@@ -16,7 +16,7 @@ Kort overzicht; details per commit staan in de git-log en in auto-memory (`reism
 | 13-11 | Datumvelden op iPhone; evenementen weg; filters delen; chatbolletje + chat-pop-up; [[Gebruiksanalyse]] |
 | 14-11 | Stempels en uitnodiging als instapkaart; "Uit het raam" (welk land/gebergte je overvliegt, `src/overvlieg.js`) + demo; service worker haalt na een melding eerst de nieuwste versie |
 | 16-11 | Samen boeken (boekmoment); bugfix voor een eindeloze recursie in `bookCount`; prijzen rustiger opgehaald en "In de buurt" sneller |
-| 20-11 | Geen 502 bij plekken zonder Airbnb-woningen + npm audit 0 (00eb0f9, live); Wereldkaart: plekken als strook op de kaart, paneel zonder dubbelingen, Groep gecentreerd op laptop (2a37a42) |
+| 20-11 | Geen 502 bij plekken zonder Airbnb-woningen + npm audit 0 (00eb0f9, live); Wereldkaart: plekken als strook op de kaart, paneel zonder dubbelingen, Groep gecentreerd op laptop (2a37a42, live) |
 | 17-11 | [[Kladblok]] (met delen, Airbnb, vluchten, lokale verhuurders); Groep-pagina eenvoudiger |
 
 Open branches (gepusht, niet gemerged): `claude/plan-b`, `claude/meer-verhuurdata`, `claude/wereldkaart-volledig`, `claude/wereldkaart-popups`.

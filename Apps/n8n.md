@@ -13,6 +13,7 @@ Workflow-automatisering (v2.43), op [[n8n.benjaminhashi.nl]].
 | Netwerken | `books-net` + `web` (om apps direct te checken, [[Geo-blokkade]]) |
 | Poort | `127.0.0.1:5678` (alleen lokaal; webhook voor [[n8n-daily-stats.sh]]) |
 | Data | `./data` (config met encryption key!), `./postgres-data` |
+| Onderhoud | dode rijen opruimen: `VACUUM (ANALYZE)` als user n8n (laatst 2026-11-20), zie [[Grafana]] → Databasemonitoring |
 | Speciaal | `NODE_FUNCTION_ALLOW_BUILTIN=dgram,crypto` (RakNet-ping + Discord-handtekening) |
 
 ## Flows

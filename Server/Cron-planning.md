@@ -28,6 +28,7 @@ Alle tijden Europe/Amsterdam (`CRON_TZ`). Root-jobs in `/etc/cron.d/`. De Minecr
 | elke 2 min | `reismannetje-autodeploy.sh` (prod) en `reismannetje-test-autodeploy.sh` (test) | [[Reismannetje op k3s]] |
 | elke 2 min | `deploy.py auto` (user, glanerbrugcraft) | [[Minecraft op k3s]] |
 | elke 5 min | k3s CronJob `k8s-wachter` | [[Monitoring en meldingen]] |
+| elke 5 min | `/etc/cron.d/db-metrics`: SQLite-groottes voor Grafana (`db-metrics.sh`) | [[Grafana]] |
 | elke 5 min | `/etc/cron.d/loadmon-containers`: containernamen voor loadmon (`loadmon-containers.sh`: Docker + k3s via crictl → `containers.json`) | [[Geheugen]] |
 | elk uur :30 | `ensure-apps-up.sh --quiet` | [[ensure-apps-up.sh]] |
 | elke minuut | n8n "Uptime-alarm" + "Minecraft-alarm" (in n8n zelf) | [[n8n-flows]] |

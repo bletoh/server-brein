@@ -17,7 +17,7 @@ Alle web-apps draaien als Docker Compose-project onder `/srv/docker/<app>` (zie 
 | netbird-dashboard | netbirdio/dashboard | netbird | netbird, books-net | [[NetBird]] |
 | netbird-proxy | netbirdio/reverse-proxy | netbird | netbird, books-net, web | [[NetBird reverse proxy]] |
 | n8n-n8n-1 | n8nio/n8n (2.43) | n8n | books-net, web | [[n8n]] |
-| n8n-postgres-1 | postgres:16 | n8n | books-net | [[n8n]] |
+| n8n-postgres-1 | eigen build `n8n-postgres-pgsm:16` (postgres:16 + pg_stat_monitor) | n8n | books-net | [[n8n]] |
 | calibre-web | linuxserver/calibre-web | ebooks | books-net | [[Calibre-web]] |
 | nb-monit | eigen build (node:24-alpine) | nb-monit | web | [[nb-monit]] |
 | loadmon | python:3.12-alpine | loadmon | geen (meter) | [[Grafana]] |
@@ -25,6 +25,7 @@ Alle web-apps draaien als Docker Compose-project onder `/srv/docker/<app>` (zie 
 | prometheus | prom/prometheus | grafana | monitoring | [[Grafana]] |
 | node-exporter | prom/node-exporter | grafana | host | [[Grafana]] |
 | cadvisor | ghcr.io/google/cadvisor | grafana | monitoring | [[Grafana]] |
+| postgres-exporter | prometheuscommunity/postgres-exporter | grafana | books-net, monitoring | [[Grafana]] |
 | *(shelfmark)* | calibrain/shelfmark | downloader | — | [[Shelfmark]] (staat uit) |
 
 Naar k3s verhuisd: reismannetje → [[Reismannetje op k3s]]; bedrock-map, bedrock-map-api, vriendenpaneel, mcxboxbroadcast → [[Minecraft op k3s]].

@@ -23,6 +23,15 @@ Sinds 2026-11-20 staat op [[load.benjaminhashi.nl]] een volledige Grafana in pla
 
 Overzicht en Geschiedenis worden gegenereerd met `/srv/docker/grafana/maak-dashboards.py dashboards`; wijzigingen in de UI mogen (`allowUiUpdates`), maar een herstart zet de bestanden terug. Wat je wilt houden: exporteren naar JSON en in de map zetten.
 
+## Databasemonitoring (sinds 2026-11-20)
+Dashboard **Databases** (`maak-db-dashboard.py dashboards`), in de lichte Percona-variant: Percona's `pg_stat_monitor` in de Postgres van [[n8n]], zonder PMM-server.
+- **Postgres (n8n):** eigen image `n8n-postgres-pgsm:16` (`/srv/docker/n8n/postgres/Dockerfile`: postgres:16 + pg_stat_monitor 2.4.0 uit de broncode, want het zit niet in de PGDG-repo). `shared_preload_libraries=pg_stat_statements,pg_stat_monitor`, buckets van 5 min, 288 buckets (24 uur), 64 MB; `track_io_timing`, trage queries (>1 s) in de log.
+- **Rol `monitoring`:** alleen-lezen (`pg_monitor`, `default_transaction_read_only`, timeout 10 s, max 5 verbindingen); wachtwoord `PG_MONITOR_PASSWORD` in `/srv/docker/grafana/.env`.
+- **postgres-exporter** (books-net + monitoring) → Prometheus job `postgres`; Grafana-datasource `PostgreSQL (n8n)` voor de queryanalyse.
+- **SQLite:** `/usr/local/sbin/db-metrics.sh` (cron elke 5 min, `/etc/cron.d/db-metrics`) schrijft bestandsgroottes (+WAL) van Reismannetje (prod/test), loadmon, Grafana, Calibre en de NetBird-store naar `/var/lib/node_exporter/textfile/sqlite.prom` (node-exporter textfile-collector).
+- Onderdelen van het dashboard: serverstatistieken, querybelasting (zoals 'Load' in PMM), aanroepen per soort, tijd per applicatie, top-queries (klik op id → details met responstijd-histogram), queries met fouten, actieve sessies, locks, tabellen met dode rijen/vacuum, SQLite-groottes.
+- Bij een herstart van Postgres krijgt n8n een paar seconden "terminating connection" en herstelt zichzelf.
+
 ## Valkuilen
 - **Proxy-doel:** NetBird-service `dbei4o9mn2ec738gc0g0` → `grafana:8080` (cluster, direct upstream). Tot de nieuwe API-token (20-11) liep dit via de alias `loadmon`; die is weg.
 - **cAdvisor scant schijfgebruik** van alle containers: dat kostte 3-4 cores. Daarom `disk,diskIO` uit en `cpus: 0.5`.

@@ -9,7 +9,7 @@ Workflow-automatisering (v2.43), op [[n8n.benjaminhashi.nl]].
 
 | | |
 |---|---|
-| Containers | `n8n-n8n-1` (n8nio/n8n) + `n8n-postgres-1` (postgres:16) |
+| Containers | `n8n-n8n-1` (n8nio/n8n) + `n8n-postgres-1` (eigen build: postgres:16 + Percona pg_stat_monitor, sinds 2026-11-20, zie [[Grafana]]) |
 | Netwerken | `books-net` + `web` (om apps direct te checken, [[Geo-blokkade]]) |
 | Poort | `127.0.0.1:5678` (alleen lokaal; webhook voor [[n8n-daily-stats.sh]]) |
 | Data | `./data` (config met encryption key!), `./postgres-data` |

@@ -1,6 +1,6 @@
 ---
 tags: [app, monitoring]
-aliases: [Grafana, Prometheus, loadmon]
+aliases: [Prometheus, loadmon]
 map: /srv/docker/grafana
 ---
 # Grafana
@@ -10,7 +10,7 @@ Sinds 2026-11-20 staat op [[load.benjaminhashi.nl]] een volledige Grafana in pla
 ## Onderdelen (`/srv/docker/grafana/compose.yml`)
 | Container | Wat | Netwerk | Geheugen |
 |---|---|---|---|
-| grafana | Grafana 13, taal nl-NL, plugin `frser-sqlite-datasource` | books-net (alias **loadmon**) + monitoring | 768m |
+| grafana | Grafana 13, taal nl-NL, plugin `frser-sqlite-datasource` | books-net + monitoring | 768m |
 | prometheus | 90 dagen bewaren (max 5 GB), scrape elke 30 s | monitoring | 512m |
 | node-exporter | hostmetrics (CPU, geheugen, schijf, netwerk, systemd-units) | **host**, luistert alleen op `172.17.0.1:9100` | 128m |
 | cadvisor | CPU/geheugen/netwerk per Docker-container (`--docker_only`) | monitoring | 256m, 0,5 CPU |
@@ -24,7 +24,7 @@ Sinds 2026-11-20 staat op [[load.benjaminhashi.nl]] een volledige Grafana in pla
 Overzicht en Geschiedenis worden gegenereerd met `/srv/docker/grafana/maak-dashboards.py dashboards`; wijzigingen in de UI mogen (`allowUiUpdates`), maar een herstart zet de bestanden terug. Wat je wilt houden: exporteren naar JSON en in de map zetten.
 
 ## Valkuilen
-- **Proxy-doel:** de NetBird-service van load (id `dbei4o9mn2ec738gc0g0`) wijst nog naar `loadmon:8080`, want de NetBird API-token was verlopen (401). Daarom luistert Grafana op 8080 met de netwerkalias `loadmon`, en zit de loadmon-container zelf niet meer op books-net. Met een nieuwe token kan het doel naar `grafana:8080`.
+- **Proxy-doel:** NetBird-service `dbei4o9mn2ec738gc0g0` → `grafana:8080` (cluster, direct upstream). Tot de nieuwe API-token (20-11) liep dit via de alias `loadmon`; die is weg.
 - **cAdvisor scant schijfgebruik** van alle containers: dat kostte 3-4 cores. Daarom `disk,diskIO` uit en `cpus: 0.5`.
 - **Firewall:** containers op books-net/monitoring mogen standaard niet naar de host. Regel 015 laat `172.16.0.0/12` alleen bij `172.17.0.1:9100` ([[Firewall (iptables)]]).
 - **SQLite-plugin:** de macro's `$__unixEpochFrom()` werken niet in de backend; gebruik `($__from/1000)` en `($__to/1000)`. De app-tabel heeft honderden namen (kortlevende processen), dus altijd een top-N.

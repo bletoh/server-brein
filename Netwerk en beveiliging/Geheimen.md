@@ -8,7 +8,7 @@ tags: [beveiliging]
 | Geheim | Locatie | Gebruikt door |
 |---|---|---|
 | App-secrets per app | `/srv/docker/<app>/.env` (root 600) | [[Docker]] |
-| NetBird API-token | `/srv/docker/netbird/api-token` (**ongeldig sinds uiterlijk 2026-11-20**, 401: nieuwe PAT maken in het dashboard) | [[nb-api]], [[nb-monit]] |
+| NetBird API-token | `/srv/docker/netbird/api-token` (PAT, vernieuwd 2026-11-20; verlopen token geeft 401 → nieuwe maken in het dashboard) | [[nb-api]], [[nb-monit]] |
 | Grafana-admin | `/srv/docker/grafana/.env` (`GF_SECURITY_ADMIN_PASSWORD`) | [[Grafana]] |
 | NetBird proxy-token | `/srv/docker/netbird/proxy.env` | [[NetBird reverse proxy]] |
 | CrowdSec bouncer-keys | `/srv/docker/crowdsec/.env`, `traefik/dynamic/middlewares.yml` | [[CrowdSec]] |

@@ -1,10 +1,10 @@
 ---
 tags: [reismannetje, media]
-map: ~/reismannetje-demo
+map: ~/archief/reismannetje-media/reismannetje-demo
 ---
 # Reismannetje demo-video's
 
-Werkmap `~/reismannetje-demo`.
+Werkmap `~/archief/reismannetje-media/reismannetje-demo` (sinds 2026-11-12 in het archief).
 | Video | Bestand | Methode |
 |---|---|---|
 | Desktop (76 s, 60 fps) | `reismannetje-demo.mp4` | CDP screencast in slow motion, daarna versneld (`demo.js`, `maak.py`) |

@@ -7,6 +7,9 @@ bestand: /usr/local/sbin/ensure-apps-up.sh
 > [!note] Sinds 2026-10-31
 > Kijkt ook naar de `k3s`-service, de Reismannetje-deployment, de mc-pods en of alle Flux-objecten Ready zijn. De worker-services zijn sidecars geworden. → [[k3s-onderhoud]]
 
+> [!warning] Sinds 2026-11-19
+> Zolang `/etc/minecraft-uit` bestaat, slaat het script BSM, de mc-pods en de bsm/mc-sitechecks over. → [[Minecraft uit (november 2026)]]
+
 Na elke boot (+120 s), maandag 04:00 en elk uur op :30 (`--quiet`). Log in `/var/log/weekly-update.log`.
 
 1. Services `docker`, `netbird`, `bedrock-server-manager-webui`, `vriendenpaneel-worker` starten als ze niet draaien ([[Systemd-services]]).

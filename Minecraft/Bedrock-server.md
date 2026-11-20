@@ -4,6 +4,12 @@ map: ~/.config/bedrock-server-manager/data/servers/bedrock_server
 ---
 # Bedrock-server
 
+> [!warning] Sinds 2026-11-19 tijdelijk uit → [[Minecraft uit (november 2026)]]
+
+
+> [!note] Lag-optimalisatie (2026-11-02)
+> tick-distance 12 → 10 (view-distance 24 bewust gelaten); kaartrender met `DOTNET_PROCESSOR_COUNT=4 nice -n 15`; lagmeter in [[Addon Handige Extra's]] logt elke minuut `[Lag] {tps,min,piek,spelers}` als er iemand online is. Discord-meldingen online/offline worden na 12 uur gewist (`~/apps/map-work/discord-wis.json`).
+
 > [!note] Sinds 2026-10-31
 > De server, BSM en de workers draaien in k3s (namespace `mc-server`); de kaart en MCXboxBroadcast in `mc`. Beheer werkt zoals altijd via systemctl, `cmd.sh` en `deploy.py`. → [[Minecraft op k3s]]
 

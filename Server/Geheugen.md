@@ -12,3 +12,12 @@ Na een herstart gebruikte de server ~27% geheugen; daarna liep het langzaam op t
 - [[Blog (Ghost)]] verwijderd (MySQL alleen al ~530 MB).
 
 Let op: [[weekly-update.sh]] herstart de server alleen als `dnf needs-restarting -r` dat vraagt, dus niet elke week.
+
+## CPU-voorrang (2026-11-12)
+Doel: Reismannetje gaat voor, de mc-site mag deels afgeschaald worden. In rust was de CPU al ~4%; pieken komen van Claude-sessies en Playwright-containers.
+- k8s (gitops a1bf31c): CPU-request Reismannetje prod 2 (mem 384Mi), bedrock 2 → 1, reismannetje-test 100m.
+- MC-CronJobs minder vaak: kaart-render */10, kaart-collect */3, mijlpalen */5, weer */15 (k3s.service van 13-18% naar ~9% van een core).
+- [[bedrock-map.sh]] slaat het renderen over als er geen spelers zijn en de vorige render ook leeg was (marker `~/apps/map-work/render-zonder-spelers`).
+- Host: `docker update --cpu-shares 4096 traefik` + `cpu_shares` in compose; `user.slice` en `claude-remote-control.service` CPUWeight=40, IOWeight=40.
+
+Volgorde van voorrang: Reismannetje prod > Minecraft > Reismannetje test. Zie [[Minecraft op k3s]], [[Reismannetje op k3s]].

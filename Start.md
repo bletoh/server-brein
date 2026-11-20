@@ -1,7 +1,7 @@
 ---
 tags: [moc, start]
 aliases: [Home, Server-brein]
-bijgewerkt: 2026-10-31
+bijgewerkt: 2026-11-20
 ---
 # Server-brein
 
@@ -31,7 +31,7 @@ Alles over de OVH-server **vps-f1805963** (`57.129.67.6`) en wat erop draait. El
 | VPN | Self-hosted NetBird (management, signal, relay, reverse proxy) | [[NetBird]] |
 | Kubernetes | k3s naast Docker, alles via Git en Flux (sinds 2026-10-31) | [[Kubernetes (k3s)]] |
 | Reisapp | Node/Express + SQLite + MapLibre, reismannetje.nl, op k3s met testomgeving | [[Reismannetje]] |
-| Minecraft | Glanerbrugcraft, Bedrock 1.26.61 via BSM, eigen addons; op k3s | [[Bedrock-server]] |
+| Minecraft | Glanerbrugcraft, Bedrock 1.26.61 via BSM, eigen addons; op k3s. **Tijdelijk uit sinds 19-11** ([[Minecraft uit (november 2026)]]) | [[Bedrock-server]] |
 | Kaart + stats | uNmINeD-kaart + live stats op mc.benjaminhashi.nl | [[Bedrock-kaart]] |
 | Automatisering | n8n-flows, cron-scripts, k3s-CronJobs, NAS-check | [[n8n]] |
 | Meldingen | ntfy + eigen Discord-kanaal, k8s-wachter, NAS van buitenaf | [[Monitoring en meldingen]] |

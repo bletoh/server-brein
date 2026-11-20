@@ -32,12 +32,13 @@ Webapp om met een vriendengroep vakanties te plannen: kaart met pinnen, ideeën,
 ## Functies
 - [[Groepen en chat]] · [[Kaart (MapLibre)]] · [[Ideeën en swipen]] · [[Datumprikker en stemronde]]
 - [[Reisvenster en reisstand]] · [[Rondreis]] · [[Wie betaalt wat]] · [[Tickets en prijsalarm]]
-- [[Planavond]] · [[Deelpagina's en bestemmingsgids]] · [[PWA en push]] · [[Partnerlinks]] · [[Snel toevoegen]]
+- [[Planavond]] · [[Deelpagina's en bestemmingsgids]] · [[PWA en push]] · [[Partnerlinks]] · [[Snel toevoegen]] · [[Kladblok]]
 
 ## Werkwijze
 - [[Reismannetje ontwikkelworkflow]] — scratchpad-kopie, testserver, Playwright, branch, deploy
 - [[Reismannetje demo-video's]]
 - [[Reismannetje stijlgeschiedenis]]
+- [[Reismannetje wijzigingen november 2026]] · [[Gebruiksanalyse]]
 
 ## Doel van de eigenaar
 Zo makkelijk mogelijk een hele vakantie in zo weinig mogelijk klikken plannen; de kaart moet gebruiksvriendelijk blijven. Groep = vrienden van ±22 jaar.

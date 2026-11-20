@@ -25,3 +25,12 @@ tags: [werkwijze, tijdlijn]
 | 29-10 | glanerbrugcraft-repo met `deploy.py` en auto-deploy; Reismannetje "Voor thuis" (ouderfunctie) |
 | 30-10 | Reismannetje-mail via ImprovMX (Instagram) |
 | 31-10 | [[Kubernetes (k3s)]]: Reismannetje en daarna alles rond Minecraft naar k3s; [[Flux en GitOps]], [[Lokale registry]], testomgeving en zero-downtime deploys ([[Reismannetje op k3s]]); hardening en NetworkPolicies, NetBird-mark-valkuil ([[k3s-beveiliging]]); [[Minecraft op k3s]]; [[Monitoring en meldingen]] met eigen Discord-kanaal en NAS-check van buitenaf; [[k3s-onderhoud]]; Reismannetje-image 961 → 492 MB; Traefik-logrotate gerepareerd |
+| 01-11 | SELinux-valkuil in `deploy.py` (copy2 nam `user_home_t` mee) ([[Valkuilen en lessen]]) |
+| 02-11 | [[dagelijkse-opruiming.sh]] (18:00); Bedrock lag-optimalisatie (tick-distance 10, lagmeter); Discord-meldingen worden na 12 uur gewist; `deploy.py` draait lokale commits terug, dus eerst pushen |
+| 04–09-11 | Reismannetje: nieuwe Voor thuis, instapkaart, automatisch prijsalarm ([[Reismannetje wijzigingen november 2026]]) |
+| 10/11-11 | [[Home-incident 2026-11-10]]: home per ongeluk verplaatst en hersteld |
+| 11/12-11 | Reismannetje: echte vluchtroutes, Ontdekken-lijst, lanceerplan, nieuwe tabs |
+| 12-11 | Home opgeruimd naar `~/archief` ([[Mappenstructuur]]); CPU-voorrang Reismannetje prod > MC > test, MC-jobs minder vaak, kaart alleen renderen na spelen ([[Geheugen]]) |
+| 13-11 | Camera-opnames afspeelbaar via [[camera-afspeelbaar.sh]]; Reismannetje [[Gebruiksanalyse]], evenementen weg |
+| 14–17-11 | Reismannetje: Uit het raam, samen boeken, [[Kladblok]] |
+| 19-11 | [[Minecraft uit (november 2026)]]: alles rond Minecraft tijdelijk uit |

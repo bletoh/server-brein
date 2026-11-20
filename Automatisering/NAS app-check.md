@@ -22,4 +22,6 @@ Lichte curl-check **vanaf de NAS** (dus van buitenaf), elk kwartier via de DSM T
 
 Wijzigen: VPS-kopie aanpassen, dan naar de NAS kopiëren (`ssh … 'cat > file' < file`). De eigenaar wil nul merkbare belasting op de NAS.
 
+Camera-opnames afspeelbaar maken: [[camera-afspeelbaar.sh]].
+
 Zie [[backupnas (Synology)]], [[Domeinen]].

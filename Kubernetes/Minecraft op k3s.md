@@ -4,6 +4,12 @@ aliases: [Minecraft k8s, mc-server, namespace mc]
 ---
 # Minecraft op k3s
 
+> [!warning] Sinds 2026-11-19 staat alles uit
+> Flux gesuspend, deployments op 0, CronJobs gesuspend. Terug met `~/minecraft-weer-aan.sh`. → [[Minecraft uit (november 2026)]]
+
+> [!note] deploy.py (november)
+> Deploy kopieert met copyfile+copymode, zodat het SELinux-label niet wordt meegenomen (zie [[Valkuilen en lessen]]). `deploy.py` importeert eerst live → repo, dus: commit, push naar main, `git reset --hard HEAD~1`, dan `./deploy.py`. Een lokale wijziging live zetten zonder deploy: `cat repo-bestand > live-bestand`.
+
 Sinds 2026-10-31 draait alles rond de [[Bedrock-server]] in [[Kubernetes (k3s)]], verdeeld over twee namespaces. De code blijft in de `glanerbrugcraft`-repo; `deploy.py` zet bestanden zoals altijd op de host-paden en herstart daarna de juiste pod of sidecar. De pods lezen die host-mappen rechtstreeks.
 
 ## Namespace `mc` (gehard)

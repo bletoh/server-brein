@@ -5,21 +5,25 @@ tags: [server, automatisering, cron]
 
 Alle tijden Europe/Amsterdam (`CRON_TZ`). Root-jobs in `/etc/cron.d/`. De Minecraft-jobs uit de crontab van `almalinux` zijn sinds 2026-10-31 k3s-CronJobs (zelfde schema en logbestanden, zie [[Minecraft op k3s]]); in die crontab staan alleen nog de `deploy.py`-regels van glanerbrugcraft.
 
+> [!warning] Sinds 2026-11-19 staat Minecraft uit
+> De mc-CronJobs zijn gesuspend, de `mc-*`-bestanden in `/etc/cron.d` heten `*.uit` en de `deploy.py`-regels beginnen met `#MCUIT#`. → [[Minecraft uit (november 2026)]]
+
 ## Elke dag / nacht
 | Tijd | Job | Notitie |
 |---|---|---|
 | 01:15 | `app-backups.sh` (n8n, netbird, calibre, traefik, crowdsec, kleine apps, bedrock, server) | [[app-backups.sh]] |
 | 01:30 | `reismannetje-backup.sh` | [[reismannetje-backup.sh]] |
 | 04:40 | `bedrock-ertsscan.sh` (user) | [[Mijnhoogte en ertsscan]] |
+| 18:00 | `dagelijkse-opruiming.sh` | [[dagelijkse-opruiming.sh]] |
 | 07:00 | `n8n-daily-stats.sh` → n8n-webhook → ntfy-push | [[n8n-daily-stats.sh]] |
 
 ## Steeds
 | Interval | Job | Notitie |
 |---|---|---|
-| elke minuut | `bedrock-map-collect.py` (k3s CronJob `kaart-collect`) | [[Kaart-collector]] |
-| elke 5 min | `bedrock-map.sh` (k3s CronJob `kaart-render`) | [[bedrock-map.sh]] |
-| elke 2 min | `mc-mijlpalen.py` (k3s CronJob `mijlpalen`) | [[Stats en ranglijst]] |
-| elke 10 min | `mc-weer.py` (k3s CronJob `weer`) | [[Scripts in ~-bin]] |
+| elke 3 min (sinds 12-11) | `bedrock-map-collect.py` (k3s CronJob `kaart-collect`) | [[Kaart-collector]] |
+| elke 10 min (sinds 12-11, alleen na spelen) | `bedrock-map.sh` (k3s CronJob `kaart-render`) | [[bedrock-map.sh]] |
+| elke 5 min (sinds 12-11) | `mc-mijlpalen.py` (k3s CronJob `mijlpalen`) | [[Stats en ranglijst]] |
+| elke 15 min (sinds 12-11) | `mc-weer.py` (k3s CronJob `weer`) | [[Scripts in ~-bin]] |
 | :07 :22 :37 :52 | `borden_bouw.py` (k3s CronJob `borden-bouw`) | [[Bedrock-kaart]] |
 | elke 2 min | `reismannetje-autodeploy.sh` (prod) en `reismannetje-test-autodeploy.sh` (test) | [[Reismannetje op k3s]] |
 | elke 2 min | `deploy.py auto` (user, glanerbrugcraft) | [[Minecraft op k3s]] |

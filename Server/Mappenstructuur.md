@@ -28,7 +28,7 @@ Sinds 2026-10-03 staat alles op één vaste plek (verhuisd uit `/var/ebooks`, `/
 └── nas-check/app-check.sh → [[NAS app-check]]
 
 /usr/local/sbin/           ← root-scripts: [[weekly-update.sh]], [[ensure-apps-up.sh]], [[app-backups.sh]],
-                             [[reismannetje-backup.sh]], [[n8n-daily-stats.sh]]
+                             [[reismannetje-backup.sh]], [[n8n-daily-stats.sh]], [[dagelijkse-opruiming.sh]]
 /etc/cron.d/               → [[Cron-planning]]
 /opt/bsm-venv, /opt/bsm-data → [[Bedrock Server Manager]]
 
@@ -38,7 +38,8 @@ Sinds 2026-10-03 staat alles op één vaste plek (verhuisd uit `/var/ebooks`, `/
 ├── apps/map-work/         ← werkmap kaart: wereldkopie, JSON-state, voor-*.js/html backups, chunk-merge
 ├── .config/bedrock-server-manager/   → [[Bedrock-server]] (servers, backups, addons)
 ├── .config/nas-check/     ← SSH-sleutel naar de NAS, zie [[backupnas (Synology)]]
-└── reismannetje-demo/     → [[Reismannetje demo-video's]]
+└── archief/               ← opgeruimd uit ~ op 2026-11-12 (LEESMIJ.md): oude sessielogs, media (incl. demo-video's),
+                             downloads, wegwerp-klonen, herstel-20261111 ([[Home-incident 2026-11-10]]). Niets gebruikt, mag weg.
 ```
 
 Regel: een nieuwe app krijgt een eigen map onder `/srv/docker`, een vaste `name:` in compose, en komt in `APPS=` van [[weekly-update.sh]] en [[ensure-apps-up.sh]] en in [[app-backups.sh]].

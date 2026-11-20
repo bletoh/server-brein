@@ -30,6 +30,10 @@ Dashboard **Databases** (`maak-db-dashboard.py dashboards`), in de lichte Percon
 - **postgres-exporter** (books-net + monitoring) → Prometheus job `postgres`; Grafana-datasource `PostgreSQL (n8n)` voor de queryanalyse.
 - **SQLite:** `/usr/local/sbin/db-metrics.sh` (cron elke 5 min, `/etc/cron.d/db-metrics`) schrijft bestandsgroottes (+WAL) van Reismannetje (prod/test), loadmon, Grafana, Calibre en de NetBird-store naar `/var/lib/node_exporter/textfile/sqlite.prom` (node-exporter textfile-collector).
 - Onderdelen van het dashboard: serverstatistieken, querybelasting (zoals 'Load' in PMM), aanroepen per soort, tijd per applicatie, top-queries (klik op id → details met responstijd-histogram), queries met fouten, actieve sessies, locks, tabellen met dode rijen/vacuum, SQLite-groottes.
+- **Onderhoud 2026-11-20:** handmatig `VACUUM (ANALYZE)` op de hele n8n-database en `VACUUM (FULL, ANALYZE)` op kleine tabellen (<5 MB, <100 rijen) met veel dode rijen; alle dode rijen naar 0, database 22 → 21 MB (bv. `workflow_entity` 256 → 104 kB). Niet periodiek nodig: autovacuum doet het, maar pas boven een drempel, dus bij kleine tabellen blijft "dood %" soms hoog (onschuldig). Opnieuw doen (als user `n8n`, niet `monitoring`):
+  ```bash
+  sudo docker exec n8n-postgres-1 psql -U n8n -d n8n -c "SET lock_timeout='5s'" -c "VACUUM (ANALYZE)"
+  ```
 - Bij een herstart van Postgres krijgt n8n een paar seconden "terminating connection" en herstelt zichzelf.
 
 ## Valkuilen

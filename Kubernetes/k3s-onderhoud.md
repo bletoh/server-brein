@@ -4,6 +4,9 @@ aliases: [k3s-updates, k8s-images-bijwerken]
 ---
 # k3s-onderhoud
 
+> [!note] 2026-11-20
+> `flux-update.sh`: proefrun met `--field-manager=kustomize-controller` (faalde op 16-11) en wacht na de push tot Flux de commit echt heeft toegepast. Flux nu v2.10.0 (controllers v1.10.1).
+
 Alles draait automatisch; het meeste hangt aan [[weekly-update.sh]] (maandag 03:00, terwijl Minecraft uit staat).
 
 | Wat | Hoe | Wanneer |

@@ -11,7 +11,7 @@ Op verzoek van de eigenaar staat **alles rond Minecraft tijdelijk uit**, tot hij
 | Onderdeel | Hoe uitgezet |
 |---|---|
 | Vlagbestand | `/etc/minecraft-uit`: zolang dit bestaat slaat [[ensure-apps-up.sh]] BSM, de mc-pods en de bsm/mc-sitechecks over (backup: `/srv/backups/ensure-apps-up.voor-mc-uit-*.sh`) |
-| Flux | kustomizations `mc` en `mc-server` op suspend ([[Flux en GitOps]]) |
+| Flux | kustomizations `mc` en `mc-server` op suspend, sinds 2026-11-20 ook in Git (`suspend: true` in `clusters/server/apps.yaml`), want een sync van flux-system haalde de kubectl-pauze weg ([[Flux en GitOps]]) |
 | Server | `bedrock-server-manager-webui` gestopt en disabled; deployment `mc-server/bedrock` op 0 ([[Bedrock Server Manager]]) |
 | Namespace `mc` | `bedrock-map`, `bedrock-map-api`, `vriendenpaneel`, `mcxboxbroadcast` op 0, dus [[mc.benjaminhashi.nl]] is offline |
 | k3s CronJobs | `borden-bouw`, `kaart-collect`, `kaart-render`, `mijlpalen`, `weer` op suspend ([[Cron-planning]]) |

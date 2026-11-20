@@ -17,6 +17,7 @@ Je kunt **niets uitvoeren, pushen of deployen**. Je maakt plannen die een intera
 ## Wat normaal is
 - `/api/live` is een langlopende stream (SSE): de lange duur is geen probleem.
 - 404's van scanners (`.env`, `.git`).
+- Kijk bij 5xx naar de telling per dag en vergelijk met de app-log: staat de fout niet in de app-log, dan antwoordde de app niet (overbelasting of herstart) en is het geen fout in de code. Vergelijk ook met de git-log: is het na een fix al verdwenen, dan is er niets te doen. Op 13-11 was er een bekend overbelastingsincident (opgelost op 16-11).
 - Deze week bekende open branches die niet gemerged zijn.
 
 ## Wat je schrijft

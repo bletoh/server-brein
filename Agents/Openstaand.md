@@ -7,6 +7,9 @@ Bijgehouden door de agents (zie [[Agents]]). `[~]` = gedaan maar wacht op de eig
 
 ## Server
 
+- [ ] 2026-11-21 | prioriteit midden | Back-up kleine-apps mislukt (`grafana/grafana-data: file changed as we read it`) | grafana-data uitsluiten of via `sqlite3 .backup` kopiëren in app-backups.sh, daarna handmatig draaien; zie [[2026-11-21]]
+- [ ] 2026-11-21 | prioriteit laag | Snapshot-query voor schijfverandering 24u geeft "geen data" | metric `node_filesystem_avail_bytes{mountpoint="/"}` controleren in Prometheus
+
 - [x] 2026-11-20 | prioriteit midden | Grafana door kernel OOM-gekilld (limiet 768m) | controleer `docker inspect grafana --format '{{.State.OOMKilled}} {{.RestartCount}}'`; bij herhaling mem_limit naar 1g (opgelost 2026-11-20: de kill was om 19:51 bij de oude limiet van 384m; sindsdien 768m, ~420 MB in gebruik, 0 herstarts)
 - [x] 2026-11-20 | prioriteit laag | OOM-query in Prometheus/Grafana geeft "geen data" terwijl er wel een kill was | alertregel op `container_oom_events_total` (cAdvisor) (opgelost 2026-11-20: regel "Container door geheugenlimiet gestopt" bestond al; de kill was vóór cAdvisor meette)
 - [x] 2026-11-20 | prioriteit laag | flux-update dry-run mislukte 2026-11-16 | kijk of het bij de volgende weekly-update terugkomt (opgelost 2026-11-20: dry-run botste met velden van kustomize-controller; nu `--field-manager=kustomize-controller`, en het script wacht tot Flux de commit echt heeft toegepast. Flux handmatig bijgewerkt naar v2.10.0. Bijvangst: die sync haalde de kubectl-pauze van mc/mc-server weg, nu staat `suspend: true` in Git en past `minecraft-weer-aan.sh` dat aan)
